@@ -1,9 +1,24 @@
-const Hello = (props) => {
+const Hello = ({name, age}) => {
+  // Destrukturointi, voidaan laittaa myös suoraan komponenttifunktion parametreiksi
+  // const { name, age } = props
+
+  // Nuolifunktion hyödyntäminen
+  const bornYear = () => new Date().getFullYear() - age
+
+  // Toimii myös näin:
+  /*
+  const bornYear = () => {
+    const yearNow = new Date().getFullYear()
+    return yearNow - age
+  }
+  */
+
   return (
     <div>
       <p>
-        Hello {props.name}, you are {props.age} years old
+        Hello {name}, you are {age} years old
       </p>
+      <p>So you were probably born {bornYear()}</p>
     </div>
   )
 }
