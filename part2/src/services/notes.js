@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = '/api/notes'
+const baseUrl = '/'
 
 const getAll = () => {
   const request = axios.get(baseUrl)
@@ -9,14 +9,14 @@ const getAll = () => {
 }
 
 const create = newObject => {
-  const request = axios.post(baseUrl, newObject)
+  const request = axios.post(`${baseUrl}/api/notes`, newObject)
   return request.then(response => {
     return response.data
   })
 }
 
 const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject)
+  const request = axios.put(`${baseUrl}/api/notes/${id}`, newObject)
   return request.then(response => {
     return response.data
   })
