@@ -9,14 +9,14 @@ const getAll = () => {
 }
 
 const create = newObject => {
-  const request = axios.post(`${baseUrl}/api/notes`, newObject)
+  const request = axios.post(baseUrl, newObject)
   return request.then(response => {
     return response.data
   })
 }
 
 const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/api/notes/${id}`, newObject)
+  const request = axios.put(`${baseUrl}/${id}`, newObject)
   return request.then(response => {
     return response.data
   })
