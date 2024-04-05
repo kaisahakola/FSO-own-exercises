@@ -12,6 +12,7 @@ import {
   Navigate,
   useMatch
 } from 'react-router-dom'
+import { Page, Navigation, Footer } from './styles'
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -51,8 +52,8 @@ const App = () => {
     : null
 
   return (
-    <div>
-      <div>
+    <Page>
+      <Navigation>
         <Link style={padding} to="/">home</Link>
         <Link style={padding} to="/notes">notes</Link>
         <Link style={padding} to="/users">users</Link>
@@ -60,7 +61,7 @@ const App = () => {
           ? <em>{user} logged in</em>
           : <Link style={padding} to="/login">login</Link>
         }
-      </div>
+      </Navigation>
 
       <Routes>
         <Route path="/notes/:id" element={<Note note={note} />} />
@@ -70,10 +71,10 @@ const App = () => {
         <Route path="/" element={<Home />} />
       </Routes>
 
-      <div>
+      <Footer>
         <i>Note app, Department of Computer Science 2024</i>
-      </div>
-    </div>
+      </Footer>
+    </Page>
   )
 }
 

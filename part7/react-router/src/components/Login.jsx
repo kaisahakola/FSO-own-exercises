@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Input, Button } from '../styles'
 
 const Login = (props) => {
     const [username, setUsername] = useState('')
@@ -22,16 +23,16 @@ const Login = (props) => {
         <form onSubmit={onSubmit}>
           <div>
             username: 
-            <input 
+            <Input 
               name="username" 
               value={username} 
               onChange={handleUsernameChange} 
             />
           </div>
           <div>
-            password: <input type='password' />
+            password: <Input type='password' />
           </div>
-          <button type="submit">login</button>
+          <Button type="submit" primary=''>login</Button>
         </form>
       </div>
     )
